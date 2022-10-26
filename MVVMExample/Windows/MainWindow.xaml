@@ -1,0 +1,24 @@
+﻿<Window x:Class="MVVMExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMExample"
+        xmlns:vm="clr-namespace:MVVMExample.VM.ViewModels;assembly=MVVMExample.VM"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        DataContext="{local:ViewModelLocator vm:MainWindowViewModel}"
+        Title="MainWindow" Height="450" Width="800" Icon="/MVVMExample;component/Gfx/favicon.ico">
+    <Window.Resources>
+       
+    </Window.Resources>
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Closing">
+            <behaviors:InvokeCommandAction Command="{Binding ClosingCommand}"/>
+            <!--CommandParameter="{Binding SelectedDevice}"/>-->
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <Grid>
+
+    </Grid>
+</Window>
